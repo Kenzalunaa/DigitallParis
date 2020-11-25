@@ -1,5 +1,5 @@
 <?php
-session_start();
+session_start(); //On démarre une session
 if(isset($_SESSION['email'])){
   header('Location: index.php');
   exit;
@@ -11,13 +11,13 @@ if(isset($_SESSION['email'])){
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="author" content="NoS1gnal"/>
-
+<!---CSS de la page charger avec ces liens--->
             <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
             <title>Connexion</title>
         </head>
         <body>
-
+<!--- Les différents messages d'érreur possible --->
         <div class="login-form">
              <?php
                 if(isset($_GET['login_err']))
@@ -52,7 +52,7 @@ if(isset($_SESSION['email'])){
                     }
                 }
                 ?>
-
+<!--- Formulaire de connexion --->
             <form action="connexion_traitement.php" method="post">
                 <h2 class="text-center">Connexion</h2>
                 <div class="form-group">
@@ -65,9 +65,11 @@ if(isset($_SESSION['email'])){
                     <button type="submit" class="btn btn-primary btn-block">Connexion</button>
                 </div>
             </form>
+<!--- Liens (buttons) --->
             <p class="text-center"><a href="inscription.php">Inscription</a></p>
             <p class="text-center"><a href="index.php">Accueil</a></p>
         </div>
+<!--- CSS --->
         <style>
             .login-form {
                 width: 340px;

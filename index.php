@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
+<!--- CSS de la page charger avec ces liens --->
     <meta charset="utf-8">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
 
   </head>
+<!--- Navbar contenant les boutons --->
   <body>
     <div class="block">
       <header class="header">
@@ -20,7 +22,7 @@
         </nav>
       </header>
     </div>
-
+<!--- Image d'arière plan et text par dessus --->
     <div class="block">
       <div class="banner">
         <img src="img/voituresgarees.jpg" class="banner-image">
@@ -39,7 +41,7 @@
         </div>
       </div>
     </div>
-
+<!--- Description détailler du produit --->
         <div class="percent">
           <p>
             <span class="percent-value">140200</span>
@@ -57,6 +59,7 @@
           </span>
         </h3>
 
+<!--- Javascript --->
     <script src="js/main.js"></script>
   </body>
 

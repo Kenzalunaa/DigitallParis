@@ -4,12 +4,13 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="author" content="NoS1gnal"/>
-
+<!---CSS de la page charger avec ces liens--->
             <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
             <title>Inscription</title>
         </head>
         <body>
+<!--- Les différents messages d'érreur possible --->
         <div class="login-form">
             <?php
                 if(isset($_GET['reg_err']))
@@ -66,7 +67,7 @@
                     }
                 }
                 ?>
-
+<!--- Formulaire d'inscription --->
             <form action="inscription_traitement.php" method="post">
                 <h2 class="text-center">Inscription</h2>
                 <div class="form-group">
@@ -88,8 +89,10 @@
                     <button type="submit" class="btn btn-primary btn-block">Inscription</button>
                 </div>
             </form>
+<!--- Lien (button) --->
             <p class="text-center"><a href="connexion.php">Connexion</a></p>
         </div>
+<!--- CSS --->
         <style>
             .login-form {
                 width: 340px;

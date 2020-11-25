@@ -5,13 +5,14 @@
     <title></title>
   </head>
   <body>
-  <!--  <meta http-equiv="refresh" content="5; verifications.php"/> -->
+  <!-- On raffraichi la page après 5 seconde pour passer à la suivante -->
     <meta http-equiv="refresh" content="5 ; url=verifications.php">
   </body>
 </html>
     <?php
-  require_once('stripe-php-7.61.0/init.php'); // Ne pas oublier cte ligne +modifier lien vers la bonne librairie
+  require_once('stripe-php-7.61.0/init.php'); //Librairie de Stripe pour le formulaire de paiement
 
+//Clé API de Stripe (obtenue via le mode test du compte)
 \Stripe\Stripe::setApiKey("sk_test_51HHR2GIQqt5dh3sV0DYPhNTPJSZUg2eIp9gMapWGRww55iHHdvVgCqsMWLeiWki1CuYP3wVDhPuhn6ToL8wrIrOj00enJsby6p");
 
   $token  = $_POST['stripeToken'];

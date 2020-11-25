@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="NoS1gnal"/>
-
+<!---CSS de la page charger avec ces liens--->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>Mot de passe oublié</title>
   </head>
   <body>
+<!--- Formulaire de récupération de mdp (mot de passe) --->
       <div align="center">
         <form action="traitement.php" method="post">
             <h2 class="text-center">récupéré mon mot de passe</h2>
@@ -21,7 +22,7 @@
                 <button type="submit" class="btn btn-primary btn-block">récupéré</button>
             </div>
         </form>
-
+<!--- CSS --->
         <style>
             .login-form {
                 width: 340px;
