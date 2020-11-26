@@ -1,6 +1,7 @@
 <?php
-    require_once '../view/config.php';
+    require_once '../view/config.php'; //On a bessoin de config.php
 
+//On traite les données pour pouvoir les insérer dans la BDD (base de données)
     if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['password_retype']))
     {
         $nom = htmlspecialchars($_POST['nom']);
@@ -9,7 +10,7 @@
         $password = htmlspecialchars($_POST['password']);
         $password_retype = htmlspecialchars($_POST['password_retype']);
 
-        $check = $bdd->prepare('SELECT nom, prenom, email, password FROM membres WHERE email = ?');
+        $check = $bdd->prepare('SELECT nom, prenom, email, password FROM membres WHERE email = ?');  //On se prépare à insérer les données
         $check->execute(array($email));
         $data = $check->fetch();
         $row = $check->rowCount();
@@ -20,10 +21,10 @@
                     if(filter_var($email, FILTER_VALIDATE_EMAIL)){
                         if($password == $password_retype){
 
-                            $password = hash('sha256', $password);
+                            $password = hash('sha256', $password); //Mise en place d'un hashage (sha256)
                             $ip = $_SERVER['REMOTE_ADDR'];
 
-                            $insert = $bdd->prepare('INSERT INTO membres (nom, prenom, email, password) VALUES (:nom, :prenom, :email, :password)');
+                            $insert = $bdd->prepare('INSERT INTO membres (nom, prenom, email, password) VALUES (:nom, :prenom, :email, :password)'); //On insert les données
                             $insert->execute(array(
                                 'nom' => $nom,
                                 'prenom' => $prenom,
@@ -31,8 +32,8 @@
                                 'password' => $password
                             ));
 
-                            header('Location: ../view/offres.php?reg_err=success');
-                        }else header('Location: ../view/inscription.php?reg_err=password');
+                            header('Location: ../view/offres.php?reg_err=success'); //On renvoie à la page offres.php si tout est bon
+                        }else header('Location: ../view/inscription.php?reg_err=password'); //Sinon on renvoie à la page connexion.php avec un message d'erreur
                     }else header('Location: ../view/inscription.php?reg_err=email');
                 }else header('Location: ../view/inscription.php?reg_err=email_length');
             }else header('Location: ../view/inscription.php?reg_err=nom_length');
